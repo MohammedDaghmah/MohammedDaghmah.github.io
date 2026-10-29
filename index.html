@@ -1,0 +1,798 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mohammed Daghmah</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070B14'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-size='20' font-weight='800' text-anchor='middle' fill='%236C8CFF'%3EM%3C/text%3E%3C/svg%3E">
+<meta property="og:url" content="https://mohammeddaghmah.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="description" content="Senior Mobile, SDK & Full-Stack Architect. Flutter, ASP.NET Core and web platforms for money and identity, published on Google Play, App Store and Huawei AppGallery.">
+<meta property="og:title" content="Mohammed Daghmah, Senior Mobile, SDK & Full-Stack Architect">
+<meta property="og:description" content="Flutter and ASP.NET Core apps and SDKs for money and identity.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F4F6FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#070B14" media="(prefers-color-scheme: dark)">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Mohammed Daghmah","jobTitle":"Senior Mobile, SDK & Full-Stack Architect","address":{"@type":"PostalAddress","addressLocality":"Sana'a","addressCountry":"YE"},"alumniOf":"Sana'a University","knowsLanguage":["ar","en"],"knowsAbout":["Flutter","Dart","ASP.NET Core","C#","Angular","React","Web development","Mobile SDK development","Clean Architecture","Biometric verification","ZATCA e-invoicing"],"sameAs":["https://www.linkedin.com/in/mohammeddaghmah","https://github.com/MohammedDaghmah"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Readex+Pro:wght@500;600;700&display=swap">
+<style>
+  /* Layout: one editorial column. Sticky header, a hero that pairs the thesis
+     with the dependency-rule diagram, then sections as a label | content grid.
+     Cobalt is the single accent; amber is reserved for the arrows in the diagram. */
+  :root {
+    --bg: #070B14;
+    --surface: #0E1526;
+    --fg: #EDF1FA;
+    --muted: #9AA7C2;
+    --line: #1C2742;
+    --accent: #6C8CFF;
+    --accent-ink: #070B14;
+    --signal: #F2A93B;
+    --ok: #4CD28A;
+    --font-display: 'Bricolage Grotesque', 'Readex Pro', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+    --font-body: 'IBM Plex Sans', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+    --gutter: 16px;
+    --header-h: 64px;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #F4F6FB; --surface: #E9EDF6; --fg: #0A0F1D; --muted: #455069;
+      --line: #D2D9E8; --accent: #1F44E0; --accent-ink: #FFFFFF; --signal: #B35C00; --ok: #1B8A4F;
+      color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #F4F6FB; --surface: #E9EDF6; --fg: #0A0F1D; --muted: #455069;
+    --line: #D2D9E8; --accent: #1F44E0; --accent-ink: #FFFFFF; --signal: #B35C00; --ok: #1B8A4F;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 12px); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  html, body { overflow-x: clip; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+    padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+    padding-block: 0;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 20; }
+  [lang="ar"] body { line-height: 1.85; }
+  a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .ltr { direction: ltr; unicode-bidi: isolate; }
+  bdi.nb { white-space: nowrap; }
+
+  .skip { position: absolute; inset-inline-start: -9999px; top: calc(env(safe-area-inset-top, 0px) + 8px); background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 6px; z-index: 30; }
+  .skip:focus { inset-inline-start: var(--gutter); }
+
+  header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 15; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .top-in { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .mark { font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: -.01em; color: var(--fg); text-decoration: none; white-space: nowrap; }
+  .mark i { font-style: normal; color: var(--accent); }
+  nav.links { display: flex; align-items: center; gap: 4px; }
+  nav.links a { color: var(--muted); text-decoration: none; font-size: 14px; padding: 8px 12px; min-height: 36px; display: inline-flex; align-items: center; border-radius: 6px; }
+  nav.links a:hover { color: var(--fg); background: var(--surface); }
+  nav.links a[aria-current="true"] { color: var(--fg); background: var(--surface); }
+  .tools { display: flex; align-items: center; gap: 8px; }
+  .chip-btn { font-family: var(--font-body); font-size: 13px; line-height: 1; color: var(--fg); background: none; border: 1px solid var(--line); height: 36px; min-width: 36px; padding: 0 14px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+  .chip-btn:hover { border-color: var(--accent); }
+  .theme { width: 36px; padding: 0; }
+  .theme svg { width: 16px; height: 16px; }
+
+  .hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: center; padding-block: 64px 72px; }
+  .role-line { font-size: 15px; font-weight: 500; color: var(--accent); margin: 0 0 14px; }
+  h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.4rem, 5.4vw, 4.3rem); line-height: 1.03; letter-spacing: -.035em; margin: 0 0 20px; text-wrap: balance; }
+  [lang="ar"] h1 { line-height: 1.3; letter-spacing: 0; font-weight: 700; }
+  .lead { font-size: 18px; color: var(--muted); max-width: 54ch; margin: 0 0 28px; text-wrap: pretty; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 8px; font-weight: 500; font-size: 15px; text-decoration: none; border: 1px solid var(--fg); color: var(--fg); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn.primary:hover { filter: brightness(1.08); }
+  .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  dl.facts { margin: 36px 0 0; padding-top: 22px; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; max-width: 420px; }
+  dl.facts dt { font-size: 13px; color: var(--muted); }
+  dl.facts dd { margin: 2px 0 0; font-weight: 500; font-size: 15px; }
+
+  figure.rule { margin: 0; padding: 0; }
+  figure.rule svg { width: 100%; height: auto; display: block; }
+  figure.rule figcaption { font-size: 14px; color: var(--muted); margin-top: 14px; line-height: 1.6; text-wrap: pretty; }
+  .d-box { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+  .ring { fill: none; stroke: var(--line); stroke-width: 1; }
+  .ring.dashed { stroke-dasharray: 2 9; stroke-linecap: round; stroke-width: 1.6; stroke: var(--muted); }
+  .spark { fill: var(--accent); }
+  .orbit { transform-origin: 240px 240px; }
+  .d-core { fill: var(--accent); }
+  .d-text { fill: var(--fg); font-family: var(--font-mono); font-size: 13px; font-weight: 500; }
+  .d-sub { fill: var(--muted); font-family: var(--font-mono); font-size: 10.5px; }
+  .d-core-text { fill: var(--accent-ink); font-family: var(--font-mono); font-size: 14px; font-weight: 500; }
+  .d-core-sub { fill: var(--accent-ink); opacity: .85; font-family: var(--font-mono); font-size: 10.5px; }
+  .d-arrow { stroke: var(--signal); stroke-width: 1.8; fill: none; }
+  .d-head { fill: var(--signal); }
+  .d-label { fill: var(--signal); font-family: var(--font-mono); font-size: 10px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+
+  .stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+  .stats li { padding: 28px 24px 36px; display: flex; flex-direction: column; gap: 14px; border-inline-start: 1px solid var(--line); }
+  .stats li:first-child { border-inline-start: 0; padding-inline-start: 0; }
+  .num { font-family: var(--font-display); font-weight: 800; font-size: clamp(64px, 11vw, 136px); line-height: .88; letter-spacing: -.045em; background: linear-gradient(180deg, var(--fg) 30%, color-mix(in srgb, var(--fg) 38%, var(--bg))); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stats span { color: var(--muted); font-size: 15px; max-width: 24ch; text-wrap: balance; }
+  @media (max-width: 560px) {
+    .stats { grid-template-columns: minmax(0, 1fr); }
+    .stats li, .stats li:first-child { flex-direction: row; align-items: baseline; gap: 20px; padding: 18px 0; border-inline-start: 0; border-top: 1px solid var(--line); }
+    .stats li:first-child { border-top: 0; }
+    .num { font-size: 64px; min-width: 1ch; }
+  }
+
+  /* Craft section: phone flow, code panel, principles */
+  .craft { display: grid; gap: 56px; }
+  .flow { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; justify-items: start; align-items: center; }
+  .phone { position: relative; width: 250px; max-width: 100%; aspect-ratio: 9 / 18.2; border-radius: 38px; border: 8px solid var(--line); background: var(--bg); overflow: hidden; box-shadow: 0 40px 70px -40px color-mix(in srgb, var(--accent) 60%, transparent); }
+  .phone::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%); }
+  .notch { position: absolute; z-index: 2; top: 8px; inset-inline: 0; margin-inline: auto; width: 62px; height: 16px; border-radius: 99px; background: var(--line); }
+  .scr { position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 40px 20px 24px; text-align: center; }
+  .scr p { margin: 0; font-size: 14px; font-weight: 500; line-height: 1.4; }
+  .phone[data-step="1"] .s1, .phone[data-step="2"] .s2, .phone[data-step="3"] .s3 { display: flex; }
+  .face { position: relative; width: 150px; height: 150px; border-radius: 50%; display: grid; place-items: center; color: var(--muted); background: var(--surface); }
+  .face svg { width: 84px; height: 84px; }
+  .scan-ring { position: absolute; inset: -4px; border-radius: 50%; background: conic-gradient(var(--accent) 0 28%, transparent 28% 100%); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px)); mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px)); }
+  .idcard { position: relative; width: 190px; height: 120px; border-radius: 12px; background: var(--surface); border: 2px solid var(--accent); overflow: hidden; }
+  .idcard .photo { position: absolute; inset-block-start: 18px; inset-inline-start: 16px; width: 48px; height: 58px; border-radius: 6px; background: var(--line); }
+  .idcard .bar { position: absolute; inset-inline-start: 78px; height: 8px; border-radius: 4px; background: var(--line); }
+  .idcard .b1 { top: 22px; width: 90px; } .idcard .b2 { top: 40px; width: 70px; } .idcard .b3 { top: 58px; width: 80px; }
+  .idcard .laser { position: absolute; inset-inline: 0; top: 0; height: 2px; background: var(--accent); box-shadow: 0 0 14px 2px var(--accent); }
+  .check { width: 108px; height: 108px; }
+  .c-ring { stroke: var(--ok); opacity: .35; }
+  .c-tick { stroke: var(--ok); }
+
+  .flow-text { max-width: 46ch; }
+  .flow-text h3 { font-family: var(--font-display); font-size: 26px; font-weight: 700; margin: 0 0 6px; letter-spacing: -.015em; }
+  [lang="ar"] .flow-text h3 { letter-spacing: 0; }
+  .note { margin: 0 0 20px; color: var(--muted); font-size: 14px; }
+  .steps { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .step { font-family: var(--font-body); font-size: 14px; height: 38px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); background: none; color: var(--fg); cursor: pointer; }
+  .step:hover { border-color: var(--accent); }
+  .step[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .step-desc { margin: 0; color: var(--muted); font-size: 16px; min-height: 5.4em; text-wrap: pretty; }
+
+  .code { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .code figcaption { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 12px 18px; border-bottom: 1px solid var(--line); font-family: var(--font-mono); font-size: 13px; }
+  .code .fname { color: var(--muted); }
+  .code a { color: var(--accent); }
+  .code pre { margin: 0; padding: 20px 18px; overflow-x: auto; font-family: var(--font-mono); font-size: 13.5px; line-height: 1.75; tab-size: 2; text-align: left; }
+  .code code { font-family: inherit; }
+  .code .k { color: var(--accent); }
+  .code .t { color: var(--signal); }
+  .code .c { color: var(--muted); font-style: italic; }
+
+  .principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px 40px; }
+  .principles li { border-top: 1px solid var(--line); padding-top: 18px; }
+  .principles h3 { font-family: var(--font-display); font-size: 19px; font-weight: 600; margin: 0 0 6px; }
+  .principles p { margin: 0; color: var(--muted); font-size: 15px; text-wrap: pretty; }
+  @container (min-width: 560px) { .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @container (min-width: 620px) { .flow { grid-template-columns: auto minmax(0, 1fr); gap: 56px; justify-items: stretch; } .phone { justify-self: center; } }
+  @keyframes tick { from { stroke-dashoffset: 60; } to { stroke-dashoffset: 0; } }
+  @keyframes laser { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(116px); } }
+  section { border-top: 1px solid var(--line); padding-block: clamp(36px, 6vw, 64px); display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 32px; }
+  h2 { font-family: var(--font-display); font-size: 32px; line-height: 1.15; font-weight: 800; letter-spacing: -.015em; margin: 0; text-wrap: balance; position: sticky; top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 24px); align-self: start; }
+  [lang="ar"] h2 { letter-spacing: 0; line-height: 1.4; }
+
+  .col { container-type: inline-size; }
+  .work { display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px 40px; }
+  .work article { border-top: 1px solid var(--line); padding-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+  .work h3 { font-family: var(--font-display); font-size: 20px; line-height: 1.3; font-weight: 600; margin: 0; letter-spacing: -.01em; }
+  [lang="ar"] .work h3 { letter-spacing: 0; }
+  .work p { margin: 0; color: var(--muted); font-size: 15px; text-wrap: pretty; }
+  ul.tags { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  ul.tags li { font-family: var(--font-mono); font-size: 12px; line-height: 1; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 5px 8px; direction: ltr; unicode-bidi: isolate; }
+
+  .oss { margin-top: 48px; }
+  .oss h3 { font-family: var(--font-display); font-size: 17px; font-weight: 600; margin: 0 0 14px; }
+  .oss-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  @container (min-width: 560px) {
+    .work, .oss-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .work article:nth-child(-n+2) { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); grid-template-areas: "t d" "g d"; column-gap: 40px; row-gap: 12px; align-content: start; padding-top: 24px; }
+    .work article:nth-child(-n+2) h3 { grid-area: t; font-size: 30px; line-height: 1.15; letter-spacing: -.02em; }
+    .work article:nth-child(-n+2) p { grid-area: d; font-size: 16.5px; line-height: 1.7; }
+    .work article:nth-child(-n+2) ul.tags { grid-area: g; align-self: start; }
+  }
+  .oss-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 18px 0 0; font-size: 15px; }
+  .repo { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: var(--fg); }
+  .repo:hover { border-color: var(--accent); }
+  .repo b { font-family: var(--font-mono); font-size: 14px; font-weight: 500; color: var(--accent); overflow-wrap: anywhere; display: flex; align-items: center; gap: 8px; direction: ltr; }
+  .repo b svg { width: 13px; height: 13px; flex: none; }
+  .repo span { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+  dl.stack { margin: 0; display: grid; gap: 0; }
+  dl.stack > div { display: grid; grid-template-columns: minmax(0, 150px) minmax(0, 1fr); gap: 20px; padding-block: 16px; border-top: 1px solid var(--line); }
+  dl.stack > div:first-child { border-top: 0; padding-top: 0; }
+  dl.stack dt { font-weight: 600; font-size: 15px; padding-top: 4px; }
+  dl.stack dd { margin: 0; display: flex; flex-wrap: wrap; gap: 6px; direction: ltr; justify-content: flex-start; }
+  [dir="rtl"] dl.stack dd { justify-content: flex-end; }
+  dl.stack dd span { font-size: 14px; line-height: 1; padding: 7px 10px; border-radius: 6px; background: var(--surface); color: var(--fg); }
+
+  ol.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-inline-start: 1px solid var(--line); margin-inline-start: 5px; }
+  ol.timeline li { position: relative; display: grid; grid-template-columns: minmax(0, 120px) minmax(0, 1fr); gap: 16px; padding: 0 0 28px 28px; }
+  [dir="rtl"] ol.timeline li { padding: 0 28px 28px 0; }
+  ol.timeline li:last-child { padding-bottom: 0; }
+  ol.timeline li::before { content: ""; position: absolute; top: 7px; inset-inline-start: -6px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--line); }
+  ol.timeline li:first-child::before { background: var(--accent); border-color: var(--accent); }
+  .yrs { font-family: var(--font-mono); font-size: 13px; color: var(--muted); padding-top: 3px; }
+  .role { font-weight: 600; }
+  .ctx { color: var(--muted); font-size: 15px; text-wrap: pretty; }
+  .edu { margin: 32px 0 0; color: var(--muted); font-size: 15px; }
+
+  .contact-p { margin: 0 0 20px; max-width: 54ch; font-size: 18px; text-wrap: pretty; }
+  .email { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+  .email code { font-family: var(--font-mono); font-size: 17px; user-select: all; overflow-wrap: anywhere; color: var(--fg); }
+  .email a { text-decoration: none; }
+  .email a:hover code { color: var(--accent); }
+  .social { display: flex; gap: 20px; flex-wrap: wrap; }
+  .social a { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; }
+  .social svg { width: 13px; height: 13px; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 28px 44px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 900px) {
+    nav.links { display: none; }
+    .hero { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 36px 52px; }
+    section { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block: 40px; }
+    h2 { position: static; }
+  }
+  @media (max-width: 640px) {
+    dl.stack > div { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+    ol.timeline li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+    .lead, .contact-p { font-size: 17px; }
+  }
+
+  /* Ambient hero backdrop: a soft accent glow and a faint dot grid, both decorative. */
+  .hero { position: relative; isolation: isolate; }
+  .hero::before { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: 0; background: radial-gradient(540px circle at var(--mx, 78%) var(--my, 32%), color-mix(in srgb, var(--accent) 20%, transparent), transparent 65%); -webkit-mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent); }
+  .hero::after { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: 0; background-image: radial-gradient(var(--line) 1px, transparent 1.5px); background-size: 22px 22px; opacity: .7; -webkit-mask-image: radial-gradient(70% 70% at 50% 40%, #000, transparent); mask-image: radial-gradient(70% 70% at 50% 40%, #000, transparent); }
+
+  .status-pill { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; line-height: 1; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); margin: 0 0 20px; }
+  .dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); flex: none; }
+  .dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--ok); opacity: 0; }
+
+  .progress { position: absolute; inset-inline: 0; bottom: -1px; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
+  [dir="rtl"] .progress { transform-origin: 100% 50%; }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes reveal { from { opacity: .35; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  @keyframes flow { to { stroke-dashoffset: -20; } }
+  @keyframes ping { 0% { transform: scale(1); opacity: .55; } 80%, 100% { transform: scale(3); opacity: 0; } }
+  @keyframes halo { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); } 100% { box-shadow: 0 0 0 11px transparent; } }
+  @keyframes grow { to { transform: scaleX(1); } }
+  @keyframes pop { 40% { transform: scale(1.08); } }
+  @keyframes drift { 50% { transform: translate(-18px, 14px) scale(1.05); } }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* One orchestrated entrance: the hero content rises in sequence. */
+    .hero > div > * { animation: rise .7s cubic-bezier(.2, .7, .2, 1) backwards; }
+    .hero > div > :nth-child(2) { animation-delay: .06s; }
+    .hero > div > :nth-child(3) { animation-delay: .12s; }
+    .hero > div > :nth-child(4) { animation-delay: .18s; }
+    .hero > div > :nth-child(5) { animation-delay: .24s; }
+    .hero > div > :nth-child(6) { animation-delay: .30s; }
+    .hero figure.rule { animation: rise .9s .25s cubic-bezier(.2, .7, .2, 1) backwards; }
+
+    .dot::after { animation: ping 2.2s ease-out infinite; }
+    .orbit { animation: spin 80s linear infinite; }
+    .scan-ring { animation: spin 1.8s linear infinite; }
+    .idcard .laser { animation: laser 2.2s ease-in-out infinite; }
+    .c-tick { stroke-dasharray: 60; animation: tick .7s .1s ease-out backwards; }
+    .d-arrow { stroke-dasharray: 5 5; animation: flow 1.1s linear infinite; }
+    ol.timeline li:first-child::before { animation: halo 2.4s ease-out infinite; }
+
+    /* Scroll-driven effects (progressive: absent where unsupported, content stays visible). */
+    @supports (animation-timeline: view()) {
+      .progress { animation: grow linear both; animation-timeline: scroll(root); }
+      .flow, .code, .principles li, .work article, .repo, ol.timeline li, dl.stack > div, .oss > h3, .contact-p, .email, .social, .edu {
+        animation: reveal linear backwards; animation-timeline: view(); animation-range: entry 0% entry 38%;
+      }
+    }
+
+    /* Hover and press feedback. */
+    .btn, .repo, dl.stack dd span, .work article { transition: transform .22s cubic-bezier(.2, .7, .2, 1), box-shadow .22s ease, border-color .15s ease, background-color .15s ease, color .15s ease; }
+    .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -12px var(--accent); }
+    .btn:active { transform: translateY(0); }
+    .repo:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -16px var(--accent); }
+    .repo b svg { transition: transform .2s ease; }
+    .repo:hover b svg, .social a:hover svg { transform: translate(2px, -2px); }
+    .social svg { transition: transform .2s ease; }
+    .work article:hover h3 { color: var(--accent); }
+    .work h3 { transition: color .2s ease; }
+    dl.stack dd span:hover { transform: translateY(-2px); background: color-mix(in srgb, var(--accent) 16%, var(--surface)); }
+    .chip-btn.pop { animation: pop .35s ease; }
+    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
+  }
+  @media (forced-colors: active) {
+    .step[aria-pressed="true"] { forced-color-adjust: none; background: Highlight; color: HighlightText; }
+    .num { background: none; color: CanvasText; }
+    .btn.primary, .chip-btn, .repo { border: 1px solid ButtonText; }
+    .d-core { fill: Highlight; }
+    .d-arrow { stroke: CanvasText; }
+    .d-head { fill: CanvasText; }
+  }
+</style>
+</head><body>
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="mark" href="#top" dir="ltr">mohammed<i>.</i>daghmah</a>
+    <nav class="links" id="nav" aria-label="Sections">
+      <a href="#work" data-i18n="nav_work">Work</a>
+      <a href="#craft" data-i18n="nav_craft">Engineering</a>
+      <a href="#stack" data-i18n="nav_stack">Stack</a>
+      <a href="#path" data-i18n="nav_path">Path</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="chip-btn" id="lang" type="button" aria-label="Switch to Arabic">العربية</button>
+      <button class="chip-btn theme" id="theme" type="button" aria-label="Toggle color theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
+<div class="wrap" id="top">
+  <main id="main">
+    <div class="hero">
+      <div>
+        <p class="status-pill"><span class="dot" aria-hidden="true"></span><span data-i18n="open">Open to senior roles</span></p>
+        <p class="role-line" data-i18n="eyebrow">Senior Mobile, SDK &amp; Full-Stack Architect</p>
+        <h1 data-i18n="h1">I build mobile apps, SDKs and web platforms that handle money and identity.</h1>
+        <p class="lead" data-i18n="lead">Seven years across Flutter, ASP.NET Core and the web. Apps live on Google Play, the App Store and Huawei AppGallery, for clients in Saudi Arabia and Yemen.</p>
+        <div class="actions">
+          <a class="btn primary" href="#contact" data-i18n="cta_contact">Get in touch</a>
+          <a class="btn ghost" href="#work" data-i18n="cta_work">See the work</a>
+          <a class="btn ghost" href="Mohammed_Daghmah_CV.pdf" download data-i18n="cta_cv">Download CV</a>
+        </div>
+        <dl class="facts">
+          <div><dt data-i18n="f2_t">Based in</dt><dd data-i18n="f2_d">Sana'a, Yemen</dd></div>
+          <div><dt data-i18n="f4_t">Languages</dt><dd data-i18n="f4_d">Arabic, English</dd></div>
+        </dl>
+      </div>
+
+      <figure class="rule">
+        <div dir="ltr">
+          <svg viewBox="0 0 480 480" role="img" aria-labelledby="dtitle">
+            <title id="dtitle" data-i18n="svg_t">Dependency rule: presentation and data both point inward to the domain layer</title>
+            <defs>
+              <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="d-head"/></marker>
+              <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--accent)" stop-opacity=".38"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></radialGradient>
+            </defs>
+            <circle cx="240" cy="240" r="236" fill="url(#halo)"/>
+            <circle class="ring" cx="240" cy="240" r="100"/>
+            <circle class="ring" cx="240" cy="240" r="150"/>
+            <g class="orbit">
+              <circle class="ring dashed" cx="240" cy="240" r="200"/>
+              <circle class="spark" cx="440" cy="240" r="4"/>
+              <circle class="spark" cx="100" cy="381" r="3"/>
+            </g>
+            <circle class="d-core" cx="240" cy="240" r="72"/>
+            <text class="d-core-text" x="240" y="237" text-anchor="middle">Domain</text>
+            <text class="d-core-sub" x="240" y="257" text-anchor="middle">entities · use cases</text>
+
+            <path class="d-arrow" d="M150 132 L193 183" marker-end="url(#ah)"/>
+            <path class="d-arrow" d="M330 348 L287 297" marker-end="url(#ah)"/>
+
+            <rect class="d-box" x="20" y="64" width="150" height="66" rx="12"/>
+            <text class="d-text" x="38" y="92">Presentation</text>
+            <text class="d-sub" x="38" y="112">BLoC · pages</text>
+
+            <rect class="d-box" x="300" y="350" width="164" height="66" rx="12"/>
+            <text class="d-text" x="318" y="378">Data</text>
+            <text class="d-sub" x="318" y="398">Dio · Hive · EF Core</text>
+          </svg>
+        </div>
+        <figcaption data-i18n="caption">How I structure every app. Dependencies point inward, so the domain layer never knows which screen, API or database sits around it.</figcaption>
+      </figure>
+    </div>
+
+    <ul class="stats">
+      <li><b class="num">7</b><span data-i18n="st1_l">Years across Flutter, ASP.NET Core and the web</span></li>
+      <li><b class="num">3</b><span data-i18n="st2_l">App stores with my apps published</span></li>
+      <li><b class="num">2</b><span data-i18n="st3_l">Markets served: Saudi Arabia and Yemen</span></li>
+    </ul>
+
+    <section id="work" aria-labelledby="h-work">
+      <h2 id="h-work" data-i18n="h_work">Selected work</h2>
+      <div class="col">
+        <div class="work">
+          <article>
+            <h3 data-i18n="w1_t">Identity verification SDK</h3>
+            <p data-i18n="w1_d">A Flutter package with 3D liveness, biometric checks and OCR. Native Android and iOS integration, versioned through pubspec.yaml so any app can add it.</p>
+            <ul class="tags"><li>Flutter</li><li>Android</li><li>iOS</li><li>OCR</li><li>Biometrics</li></ul>
+          </article>
+          <article>
+            <h3 data-i18n="w2_t">Saudi compliance and payments</h3>
+            <p data-i18n="w2_d">ZATCA Phase 2 e-invoicing (XML signing, UUID and hash handling, API reporting), Muqeem and National Address integrations, and PayTabs payments on ASP.NET Core Web API.</p>
+            <ul class="tags"><li>ZATCA</li><li>Muqeem</li><li>National Address</li><li>PayTabs</li><li>ASP.NET Core</li></ul>
+          </article>
+          <article>
+            <h3 data-i18n="w3_t">ERP and POS platforms</h3>
+            <p data-i18n="w3_d">ASP.NET Core back ends with Flutter field-scanning apps for inventory, invoicing and point-of-sale.</p>
+            <ul class="tags"><li>ASP.NET Core</li><li>Flutter</li><li>Inventory</li><li>POS</li></ul>
+          </article>
+          <article>
+            <h3 data-i18n="w4_t">Booking, tracking and chat</h3>
+            <p data-i18n="w4_d">Worker booking with real-time driver tracking, an AI-assisted venue booking app with chat, and a real-time messenger on Supabase.</p>
+            <ul class="tags"><li>Real-time</li><li>Supabase</li><li>Chat</li><li>AI assistant</li></ul>
+          </article>
+          <article>
+            <h3 data-i18n="w5_t">Attendance tracking</h3>
+            <p data-i18n="w5_d">An HR attendance app that tracks check-in, lateness and weekly hours.</p>
+            <ul class="tags"><li>Flutter</li><li>HR</li></ul>
+          </article>
+          <article>
+            <h3 data-i18n="w6_t">Currency exchange</h3>
+            <p data-i18n="w6_d">A B2B currency-exchange platform with multi-signature approval on large transfers.</p>
+            <ul class="tags"><li>B2B</li><li>Multi-signature approval</li></ul>
+          </article>
+        </div>
+
+        <div class="oss">
+          <h3 data-i18n="oss_h">Open-source templates</h3>
+          <div class="oss-grid">
+            <a class="repo" href="https://github.com/MohammedDaghmah/flutter_clean_architecture_template" target="_blank" rel="noopener noreferrer">
+              <b>flutter_clean_architecture_template<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></b>
+              <span data-i18n="oss1">Flutter, BLoC, get_it, offline cache with Hive, tests at every layer, CI.</span>
+            </a>
+            <a class="repo" href="https://github.com/MohammedDaghmah/dotnet-clean-architecture-template" target="_blank" rel="noopener noreferrer">
+              <b>dotnet-clean-architecture-template<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></b>
+              <span data-i18n="oss2">ASP.NET Core 8, CQRS with MediatR, FluentValidation, EF Core, integration tests, CI.</span>
+            </a>
+          </div>
+          <p class="oss-links">
+            <a href="https://mohammeddaghmah.github.io/flutter_clean_architecture_template/" target="_blank" rel="noopener noreferrer" data-i18n="oss_demo1">Flutter live demo</a>
+            <a href="https://github.com/MohammedDaghmah/dotnet-clean-architecture-template#live-demo" target="_blank" rel="noopener noreferrer" data-i18n="oss_demo2">Run the .NET API demo</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="craft" aria-labelledby="h-craft">
+      <h2 id="h-craft" data-i18n="h_craft">How I engineer</h2>
+      <div class="col craft">
+        <div class="flow">
+          <div class="phone" id="phone" data-step="1" role="img" aria-labelledby="phone-label">
+            <span id="phone-label" class="sr" data-i18n="ph_alt">Identity verification flow illustration</span>
+            <div class="notch" aria-hidden="true"></div>
+            <div class="scr s1" aria-hidden="true">
+              <div class="face">
+                <span class="scan-ring"></span>
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="32" cy="24" r="10"/><path d="M12 54c2-12 11-18 20-18s18 6 20 18"/></svg>
+              </div>
+              <p data-i18n="ph1">Turn your head slowly</p>
+            </div>
+            <div class="scr s2" aria-hidden="true">
+              <div class="idcard">
+                <span class="photo"></span><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span>
+                <span class="laser"></span>
+              </div>
+              <p data-i18n="ph2">Place the ID inside the frame</p>
+            </div>
+            <div class="scr s3" aria-hidden="true">
+              <svg class="check" viewBox="0 0 64 64" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle class="c-ring" cx="32" cy="32" r="26"/><path class="c-tick" d="M20 33l8 8 16-17"/></svg>
+              <p data-i18n="ph3">Identity verified</p>
+            </div>
+          </div>
+          <div class="flow-text">
+            <h3 data-i18n="fl_h">Identity SDK flow</h3>
+            <p class="note" data-i18n="fl_note">An illustration of the steps, not a screenshot.</p>
+            <div class="steps" role="group" aria-label="Steps">
+              <button type="button" class="step" data-step="1" data-i18n="fl1_b">Liveness</button>
+              <button type="button" class="step" data-step="2" data-i18n="fl2_b">Document</button>
+              <button type="button" class="step" data-step="3" data-i18n="fl3_b">Result</button>
+            </div>
+            <p class="step-desc" id="stepdesc" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <figure class="code">
+          <figcaption>
+            <span class="fname" dir="ltr">lib/main.dart</span>
+            <a href="https://github.com/MohammedDaghmah/flutter_clean_architecture_template" target="_blank" rel="noopener noreferrer" dir="ltr">flutter_clean_architecture_template</a>
+          </figcaption>
+          <pre dir="ltr"><code><span class="c">// One policy object decides every security rule.</span>
+<span class="k">const</span> <span class="t">SecurityPolicy</span> _securityPolicy = <span class="k">const</span> <span class="t">SecurityPolicy</span>(
+  blockCompromisedDevices: kReleaseMode,
+  requireBiometricUnlock: <span class="k">false</span>,
+  certificatePins: &lt;<span class="t">String</span>&gt;{},
+);
+
+<span class="c">// The gate depends on small interfaces, all injected.</span>
+home: <span class="t">SecurityGate</span>(
+  policy: di.sl&lt;<span class="t">SecurityPolicy</span>&gt;(),
+  integrityChecker: di.sl&lt;<span class="t">DeviceIntegrityChecker</span>&gt;(),
+  biometricAuthenticator: di.sl&lt;<span class="t">BiometricAuthenticator</span>&gt;(),
+  child: <span class="t">BlocProvider</span>(<span class="c">/* … */</span>),
+),</code></pre>
+        </figure>
+
+        <ul class="principles">
+          <li><h3 data-i18n="pr1_t">Small interfaces, injected</h3><p data-i18n="pr1_d">Features depend on abstractions such as token storage, biometrics and device checks, wired through get_it. Each piece swaps out and tests with a fake.</p></li>
+          <li><h3 data-i18n="pr2_t">One source of truth</h3><p data-i18n="pr2_d">A single policy object drives every security decision, so the rules live in one place instead of being repeated across screens.</p></li>
+          <li><h3 data-i18n="pr3_t">Secure by default</h3><p data-i18n="pr3_d">Secure token storage, certificate pinning, jailbreak and root detection, debug-only logging and obfuscated release builds.</p></li>
+          <li><h3 data-i18n="pr4_t">Tested and automated</h3><p data-i18n="pr4_d">Unit and integration tests, GitHub Actions on every push, and Docker builds that run the same everywhere.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="stack" aria-labelledby="h-stack">
+      <h2 id="h-stack" data-i18n="h_stack">Stack</h2>
+      <dl class="stack">
+        <div><dt data-i18n="s1_t">Mobile</dt><dd><span>Flutter</span><span>Dart</span><span>Native Android</span><span>Native iOS</span><span>BLoC</span><span>Riverpod</span><span>Provider</span><span>GetX</span><span>Clean Architecture</span><span>MVVM</span><span>SDK development</span></dd></div>
+        <div><dt data-i18n="s2_t">Back end</dt><dd><span>C#</span><span>ASP.NET Core Web API</span><span>EF Core</span><span>CQRS</span><span>MediatR</span><span>SQL Server</span><span>MySQL</span><span>Laravel</span></dd></div>
+        <div><dt data-i18n="s3_t">Security</dt><dd><span>SSL pinning</span><span>AES-256</span><span>RSA signing</span><span>OAuth2</span><span>JWT</span><span>Biometric verification</span></dd></div>
+        <div><dt data-i18n="s4_t">Delivery</dt><dd><span>Firebase</span><span>Push notifications</span><span>GitHub Actions</span><span>Git</span><span>Automated testing</span><span>Google Play</span><span>App Store</span><span>Huawei AppGallery</span></dd></div>
+        <div><dt data-i18n="s6_t">Web</dt><dd><span>ASP.NET Core MVC</span><span>Razor</span><span>Angular</span><span>React.js</span><span>Laravel</span><span>SignalR</span></dd></div>
+        <div><dt data-i18n="s5_t">Also</dt><dd><span>Supabase</span></dd></div>
+      </dl>
+    </section>
+
+    <section id="path" aria-labelledby="h-path">
+      <h2 id="h-path" data-i18n="h_path">Path</h2>
+      <div>
+        <ol class="timeline">
+          <li><span class="yrs ltr" data-i18n="y1">2026 – now</span><div><div class="role" data-i18n="t1_r">Senior Mobile &amp; SDK Architect</div><div class="ctx" data-i18n="t1_c">Fintech, Sana'a. Identity SDK and payment-account app.</div></div></li>
+          <li><span class="yrs ltr" data-i18n="y2">2025 – 2026</span><div><div class="role" data-i18n="t2_r">Freelance mobile and full-stack developer</div><div class="ctx" data-i18n="t2_c">ERP, POS, booking, e-commerce and Saudi government API integrations.</div></div></li>
+          <li><span class="yrs ltr" data-i18n="y3">2021 – 2025</span><div><div class="role" data-i18n="t3_r">Android &amp; iOS team leader</div><div class="ctx" data-i18n="t3_c">Saudi-market projects. Architecture, releases and mentoring.</div></div></li>
+          <li><span class="yrs ltr" data-i18n="y4">2020 – 2021</span><div><div class="role" data-i18n="t4_r">Mobile engineer</div><div class="ctx" data-i18n="t4_c">Flutter apps with GetX and Provider, plus API middleware.</div></div></li>
+          <li><span class="yrs ltr" data-i18n="y5">2019 – 2020</span><div><div class="role" data-i18n="t5_r">Web and mobile developer</div><div class="ctx" data-i18n="t5_c">Laravel platform with a distributor mobile app.</div></div></li>
+        </ol>
+        <p class="edu" data-i18n="edu">B.Sc. in Computer Information Systems, Sana'a University, 2019.</p>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="h-contact">
+      <h2 id="h-contact" data-i18n="h_contact">Contact</h2>
+      <div>
+        <p class="contact-p" data-i18n="c_p">Open to senior Flutter, mobile SDK, .NET and full-stack roles. Email is the fastest way to reach me.</p>
+        <div class="email">
+          <a href="mailto:mohammedhuss222@gmail.com" dir="ltr"><code id="mail">mohammedhuss222@gmail.com</code></a>
+          <button class="chip-btn" id="copy" type="button" data-i18n="copy">Copy</button>
+          <span id="status" class="sr" role="status" aria-live="polite"></span>
+        </div>
+        <div class="social">
+          <a href="https://www.linkedin.com/in/mohammeddaghmah" target="_blank" rel="noopener noreferrer">LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a href="https://github.com/MohammedDaghmah" target="_blank" rel="noopener noreferrer">GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span dir="ltr">© 2026 Mohammed Daghmah</span>
+    <span data-i18n="foot">Flutter · ASP.NET Core · SDKs</span>
+  </footer>
+</div>
+
+<script>
+  var T = {
+    en: {
+      nav_craft: 'Engineering', h_craft: 'How I engineer',
+      ph_alt: 'Identity verification flow illustration',
+      ph1: 'Turn your head slowly', ph2: 'Place the ID inside the frame', ph3: 'Identity verified',
+      fl_h: 'Identity SDK flow', fl_note: 'An illustration of the steps, not a screenshot.',
+      fl1_b: 'Liveness', fl2_b: 'Document', fl3_b: 'Result',
+      fl1_d: 'A 3D liveness check confirms a real person is in front of the camera, not a photo or a replay.',
+      fl2_d: 'OCR reads the document and pulls out its fields.',
+      fl3_d: 'The host app receives a clear result and continues the onboarding flow.',
+      pr1_t: 'Small interfaces, injected', pr1_d: 'Features depend on abstractions such as token storage, biometrics and device checks, wired through get_it. Each piece swaps out and tests with a fake.',
+      pr2_t: 'One source of truth', pr2_d: 'A single policy object drives every security decision, so the rules live in one place instead of being repeated across screens.',
+      pr3_t: 'Secure by default', pr3_d: 'Secure token storage, certificate pinning, jailbreak and root detection, debug-only logging and obfuscated release builds.',
+      pr4_t: 'Tested and automated', pr4_d: 'Unit and integration tests, GitHub Actions on every push, and Docker builds that run the same everywhere.',
+      open: 'Open to senior roles', skip: 'Skip to content', navLabel: 'Sections', langLabel: 'Switch to Arabic', themeLabel: 'Toggle color theme',
+      nav_work: 'Work', nav_stack: 'Stack', nav_path: 'Path', nav_contact: 'Contact',
+      eyebrow: 'Senior Mobile, SDK & Full-Stack Architect',
+      h1: 'I build mobile apps, SDKs and web platforms that handle money and identity.',
+      lead: 'Seven years across Flutter, ASP.NET Core and the web. Apps live on Google Play, the App Store and Huawei AppGallery, for clients in Saudi Arabia and Yemen.',
+      cta_contact: 'Get in touch', cta_work: 'See the work', cta_cv: 'Download CV',
+      oss_demo1: 'Flutter live demo', oss_demo2: 'Run the .NET API demo',
+      st1_l: 'Years across Flutter, ASP.NET Core and the web', st2_l: 'App stores with my apps published', st3_l: 'Markets served: Saudi Arabia and Yemen',
+      f2_t: 'Based in', f2_d: "Sana'a, Yemen",
+      f3_t: 'Published on', f3_d: 'Google Play, App Store, AppGallery',
+      f4_t: 'Languages', f4_d: 'Arabic, English',
+      svg_t: 'Dependency rule: presentation and data both point inward to the domain layer',
+      caption: 'How I structure every app. Dependencies point inward, so the domain layer never knows which screen, API or database sits around it.',
+      h_work: 'Selected work',
+      w1_t: 'Identity verification SDK', w1_d: 'A Flutter package with 3D liveness, biometric checks and OCR. Native Android and iOS integration, versioned through pubspec.yaml so any app can add it.',
+      w2_t: 'Saudi compliance and payments', w2_d: 'ZATCA Phase 2 e-invoicing (XML signing, UUID and hash handling, API reporting), Muqeem and National Address integrations, and PayTabs payments on ASP.NET Core Web API.',
+      w3_t: 'ERP and POS platforms', w3_d: 'ASP.NET Core back ends with Flutter field-scanning apps for inventory, invoicing and point-of-sale.',
+      w4_t: 'Booking, tracking and chat', w4_d: 'Worker booking with real-time driver tracking, an AI-assisted venue booking app with chat, and a real-time messenger on Supabase.',
+      w5_t: 'Attendance tracking', w5_d: 'An HR attendance app that tracks check-in, lateness and weekly hours.',
+      w6_t: 'Currency exchange', w6_d: 'A B2B currency-exchange platform with multi-signature approval on large transfers.',
+      oss_h: 'Open-source templates',
+      oss1: 'Flutter, BLoC, get_it, offline cache with Hive, tests at every layer, CI.',
+      oss2: 'ASP.NET Core 8, CQRS with MediatR, FluentValidation, EF Core, integration tests, CI.',
+      h_stack: 'Stack', s1_t: 'Mobile', s2_t: 'Back end', s3_t: 'Security', s4_t: 'Delivery', s5_t: 'Also', s6_t: 'Web',
+      h_path: 'Path',
+      y1: '2026 – now', y2: '2025 – 2026', y3: '2021 – 2025', y4: '2020 – 2021', y5: '2019 – 2020',
+      t1_r: 'Senior Mobile & SDK Architect', t1_c: "Fintech, Sana'a. Identity SDK and payment-account app.",
+      t2_r: 'Freelance mobile and full-stack developer', t2_c: 'ERP, POS, booking, e-commerce and Saudi government API integrations.',
+      t3_r: 'Android & iOS team leader', t3_c: 'Saudi-market projects. Architecture, releases and mentoring.',
+      t4_r: 'Mobile engineer', t4_c: 'Flutter apps with GetX and Provider, plus API middleware.',
+      t5_r: 'Web and mobile developer', t5_c: 'Laravel platform with a distributor mobile app.',
+      edu: "B.Sc. in Computer Information Systems, Sana'a University, 2019.",
+      h_contact: 'Contact', c_p: 'Open to senior Flutter, mobile SDK, .NET and full-stack roles. Email is the fastest way to reach me.',
+      copy: 'Copy', copied: 'Copied', switchTo: 'العربية',
+      foot: 'Flutter · ASP.NET Core · SDKs'
+    },
+    ar: {
+      nav_craft: 'الهندسة', h_craft: 'كيف أبني الأنظمة',
+      ph_alt: 'رسم توضيحي لمسار التحقق من الهوية',
+      ph1: 'حرّك رأسك ببطء', ph2: 'ضع الهوية داخل الإطار', ph3: 'تم التحقق من الهوية',
+      fl_h: 'مسار حزمة التحقق من الهوية', fl_note: 'رسم توضيحي للخطوات وليس لقطة شاشة.',
+      fl1_b: 'الحيوية', fl2_b: 'المستند', fl3_b: 'النتيجة',
+      fl1_d: 'فحص الحيوية ثلاثي الأبعاد يتأكد أن شخصًا حقيقيًا أمام الكاميرا، لا صورة ولا تسجيلًا.',
+      fl2_d: 'تقنية OCR تقرأ المستند وتستخرج بياناته.',
+      fl3_d: 'يستلم التطبيق نتيجة واضحة ويكمل مسار التسجيل.',
+      pr1_t: 'واجهات صغيرة تُحقن عند الحاجة', pr1_d: 'تعتمد الميزات على تجريدات مثل تخزين الرموز والبصمة وفحص الجهاز، وتُربط عبر get_it. يمكن استبدال كل جزء واختباره ببديل تجريبي.',
+      pr2_t: 'مصدر واحد للحقيقة', pr2_d: 'كائن سياسة واحد يقود كل قرار أمني، فتبقى القواعد في مكان واحد ولا تتكرر بين الشاشات.',
+      pr3_t: 'آمن افتراضيًا', pr3_d: 'تخزين آمن للرموز، وتثبيت الشهادات، وكشف الجيلبريك والروت، وسجلات للتطوير فقط، وبناء إصدارات مشفّرة (Obfuscated).',
+      pr4_t: 'مُختبَر وآلي', pr4_d: 'اختبارات وحدة وتكامل، وGitHub Actions عند كل دفع، وبناء Docker يعمل بنفس الطريقة في كل مكان.',
+      open: 'منفتح على فرص Senior', skip: 'انتقل إلى المحتوى', navLabel: 'الأقسام', langLabel: 'التبديل إلى الإنجليزية', themeLabel: 'تبديل لون الواجهة',
+      nav_work: 'الأعمال', nav_stack: 'التقنيات', nav_path: 'المسيرة', nav_contact: 'التواصل',
+      eyebrow: 'مهندس تطبيقات جوال وSDK وFull-Stack أول',
+      h1: 'أبني تطبيقات جوال وحِزم SDK ومنصات ويب تتعامل مع الأموال والهوية الرقمية.',
+      lead: 'سبع سنوات من العمل بـ Flutter وASP.NET Core والويب. تطبيقات منشورة على Google Play وApp Store وHuawei AppGallery لعملاء في السعودية واليمن.',
+      cta_contact: 'تواصل معي', cta_work: 'شاهد الأعمال', cta_cv: 'تحميل السيرة الذاتية',
+      oss_demo1: 'عرض Flutter المباشر', oss_demo2: 'تشغيل عرض واجهة .NET',
+      st1_l: 'سنوات مع Flutter وASP.NET Core والويب', st2_l: 'متاجر تطبيقات منشورة عليها أعمالي', st3_l: 'سوقان: السعودية واليمن',
+      f2_t: 'المقر', f2_d: 'صنعاء، اليمن',
+      f3_t: 'النشر على', f3_d: 'Google Play وApp Store وAppGallery',
+      f4_t: 'اللغات', f4_d: 'العربية والإنجليزية',
+      svg_t: 'قاعدة الاعتماديات: طبقتا العرض والبيانات تتجهان نحو طبقة المجال',
+      caption: 'هكذا أبني كل تطبيق: تتجه الاعتماديات نحو الداخل، فلا تعرف طبقة المجال (Domain) أي شاشة أو واجهة API أو قاعدة بيانات تحيط بها.',
+      h_work: 'أعمال مختارة',
+      w1_t: 'حزمة SDK للتحقق من الهوية', w1_d: 'حزمة Flutter تجمع بين فحص الحيوية ثلاثي الأبعاد، والتحقق البيومتري، وقراءة المستندات بتقنية OCR، مع تكامل أصلي (Native) مع Android وiOS. تُضاف إلى أي تطبيق عبر ملف pubspec.yaml.',
+      w2_t: 'الامتثال والمدفوعات في السعودية', w2_d: 'الفوترة الإلكترونية (ZATCA المرحلة الثانية): توقيع XML ومعالجة UUID والتجزئة (Hash) والإبلاغ عبر API. إضافةً إلى التكامل مع منصة مقيم والعنوان الوطني، ومدفوعات PayTabs على ASP.NET Core Web API.',
+      w3_t: 'أنظمة ERP ونقاط البيع', w3_d: 'خوادم ASP.NET Core مع تطبيقات Flutter للمسح الميداني، تخدم المخزون والفواتير ونقاط البيع.',
+      w4_t: 'الحجز والتتبع والدردشة', w4_d: 'حجز العمالة مع تتبّع السائق لحظيًا، وتطبيق لحجز الأماكن بمساعد ذكي ودردشة، ومراسلة فورية مبنية على Supabase.',
+      w5_t: 'الحضور والانصراف', w5_d: 'تطبيق للحضور والانصراف يتتبع التأخير وساعات العمل الأسبوعية.',
+      w6_t: 'الصرافة', w6_d: 'منصة صرافة بين الشركات (B2B) تتطلب موافقات متعددة التوقيع على التحويلات الكبيرة.',
+      oss_h: 'قوالب مفتوحة المصدر',
+      oss1: 'Flutter وBLoC وget_it، وتخزين مؤقت للعمل دون اتصال عبر Hive، واختبارات لكل طبقة، وتكامل مستمر (CI).',
+      oss2: 'ASP.NET Core 8 بنمط CQRS مع MediatR وFluentValidation وEF Core، واختبارات تكامل، وتكامل مستمر (CI).',
+      h_stack: 'التقنيات', s1_t: 'الجوال', s2_t: 'الخادم', s3_t: 'الأمان', s4_t: 'التسليم', s5_t: 'أيضًا', s6_t: 'الويب',
+      h_path: 'المسيرة',
+      y1: '2026 – حتى الآن', y2: '2025 – 2026', y3: '2021 – 2025', y4: '2020 – 2021', y5: '2019 – 2020',
+      t1_r: 'مهندس تطبيقات جوال وSDK أول', t1_c: 'شركة تقنية مالية في صنعاء: حزمة SDK للهوية الرقمية وتطبيق لحسابات الدفع.',
+      t2_r: 'مطوّر جوال وFull-Stack مستقل', t2_c: 'أنظمة ERP ونقاط بيع وحجوزات ومتاجر إلكترونية، وتكامل مع واجهات حكومية سعودية.',
+      t3_r: 'قائد فريق Android وiOS', t3_c: 'مشاريع للسوق السعودي: تصميم المعمارية، وإدارة الإصدارات، وتوجيه المطورين.',
+      t4_r: 'مهندس تطبيقات جوال', t4_c: 'تطبيقات Flutter بـ GetX وProvider، مع طبقة وسيطة (Middleware) للـ API.',
+      t5_r: 'مطوّر ويب وجوال', t5_c: 'منصة Laravel مع تطبيق جوال للموزّعين.',
+      edu: 'بكالوريوس نظم المعلومات الحاسوبية، جامعة صنعاء، 2019.',
+      h_contact: 'التواصل', c_p: 'منفتح على الفرص بمستوى Senior في Flutter وSDK الجوال و.NET وFull-Stack. البريد الإلكتروني أسرع وسيلة للتواصل معي.',
+      copy: 'نسخ', copied: 'تم النسخ', switchTo: 'English',
+      foot: 'Flutter · ASP.NET Core · SDKs'
+    }
+  };
+
+  var lang = (navigator.language || '').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
+  try { var s = localStorage.getItem('lang'); if (s === 'ar' || s === 'en') lang = s; } catch (e) {}
+  try { var th = localStorage.getItem('theme'); if (th === 'dark' || th === 'light') document.documentElement.setAttribute('data-theme', th); } catch (e) {}
+
+  // Wrap each run of Latin text in a directional isolate so names such as
+  // "Google Play" and "ASP.NET Core" keep their order inside Arabic sentences.
+  function isolate(str) {
+    var tok = '[A-Za-z0-9](?:[A-Za-z0-9_.+#\\-]*[A-Za-z0-9])?';
+    var re = new RegExp(tok + '(?: ' + tok + ')*|\\.NET', 'g');
+    return str.replace(re, function (m) { return '<bdi dir="ltr" class="nb">' + m + '</bdi>'; });
+  }
+
+  var step = 1;
+  function setStep(n) {
+    step = n;
+    document.getElementById('phone').setAttribute('data-step', n);
+    document.querySelectorAll('.step').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(Number(b.getAttribute('data-step')) === n));
+    });
+    var v = T[lang]['fl' + n + '_d'];
+    var sd = document.getElementById('stepdesc');
+    if (lang === 'ar') sd.innerHTML = isolate(v); else sd.textContent = v;
+  }
+  document.querySelectorAll('.step').forEach(function (b) {
+    b.addEventListener('click', function () { setStep(Number(b.getAttribute('data-step'))); });
+  });
+
+  function transition(fn) {
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (document.startViewTransition && !calm) document.startViewTransition(fn); else fn();
+  }
+
+  function apply() {
+    var d = T[lang];
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var v = d[el.getAttribute('data-i18n')];
+      if (!v) return;
+      if (lang === 'ar' && !el.closest('svg')) el.innerHTML = isolate(v); else el.textContent = v;
+    });
+    setStep(step);
+    var b = document.getElementById('lang');
+    b.textContent = d.switchTo;
+    b.setAttribute('aria-label', d.langLabel);
+    document.getElementById('theme').setAttribute('aria-label', d.themeLabel);
+    document.getElementById('nav').setAttribute('aria-label', d.navLabel);
+  }
+  document.getElementById('lang').addEventListener('click', function () {
+    lang = lang === 'en' ? 'ar' : 'en';
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+    transition(apply);
+  });
+
+  document.getElementById('theme').addEventListener('click', function () {
+    var root = document.documentElement;
+    var cur = root.getAttribute('data-theme') ||
+      (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    transition(function () { root.setAttribute('data-theme', next); });
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  document.getElementById('copy').addEventListener('click', function () {
+    var btn = this, text = document.getElementById('mail').textContent;
+    function done() {
+      btn.textContent = T[lang].copied;
+      btn.classList.remove('pop'); void btn.offsetWidth; btn.classList.add('pop');
+      document.getElementById('status').textContent = T[lang].copied;
+      setTimeout(function () { btn.textContent = T[lang].copy; }, 1600);
+    }
+    function select() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('mail'));
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, select);
+    } else { select(); }
+  });
+
+  // Mark the section in view in the header nav.
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var links = {};
+    document.querySelectorAll('nav.links a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        Object.keys(links).forEach(function (k) { links[k].removeAttribute('aria-current'); });
+        var a = links[e.target.id];
+        if (a) a.setAttribute('aria-current', 'true');
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    document.querySelectorAll('main section').forEach(function (sec) { io.observe(sec); });
+  })();
+
+  // Hero spotlight follows the pointer on devices that have one.
+  (function () {
+    var h = document.querySelector('.hero');
+    if (!h || !window.matchMedia || !window.matchMedia('(pointer: fine)').matches) return;
+    h.addEventListener('pointermove', function (e) {
+      var b = h.getBoundingClientRect();
+      h.style.setProperty('--mx', (e.clientX - b.left) + 'px');
+      h.style.setProperty('--my', (e.clientY - b.top) + 'px');
+    });
+  })();
+
+  apply();
+</script>
+
+</body></html>
